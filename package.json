@@ -1,0 +1,22 @@
+{
+  "name": "mini-mean",
+  "version": "1.0.0",
+  "description": "Mini MEAN project. Mongo, Express, Angular, Node. Gulp. SASS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasdjs/mini-mean.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreasdjs/mini-mean/issues"
+  },
+  "homepage": "https://github.com/andreasdjs/mini-mean#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
