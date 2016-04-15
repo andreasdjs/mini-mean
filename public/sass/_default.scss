@@ -1,0 +1,21 @@
+
+body {
+    @include backgroundDiagonalGradient($backgroundPrimaryColor, $backgroundSecondaryColor);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $defaultHeaderFont;
+}
+
+a {
+    color: $defaultLinkColor;
+    &:hover {
+        color: $defaultLinkHoverColor;
+    }
+}
+
+div#container {
+    margin: 0 auto;
+}
