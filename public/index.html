@@ -2,10 +2,24 @@
 <html>
 <head>
 	<title>mini MEAN</title>
+	<meta charset="UTF-8">	
     <link rel="stylesheet" type="text/css" href="css/app.css" />	
 <!--    <link rel="stylesheet" type="text/css" href="css/app.min.css" /> -->
 </head>
 <body ng-app="app">
-	<h1>Hello mini MEAN!</h1>
+	<div id="container">
+		<div ng-controller="myController">
+			<h1>Hello mini MEAN!</h1>
+			<a href="#">Link 1 </a>
+			<a href="#">Link 2 </a>
+			<a href="#">Link 3 </a>
+			<button ng-click="hello()">HELLO!</button>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="scripts/app.js" type="text/javascript"></script>
+	<script src="scripts/directives.js" type="text/javascript"></script>
+	<script src="scripts/controllers.js" type="text/javascript"></script>	
+	<script src="scripts/services.js" type="text/javascript"></script>	
 </body>
 </html>
