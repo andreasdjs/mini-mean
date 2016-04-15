@@ -10,7 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/andreasdjs/mini-mean.git"
   },
-  "author": "",
+    "keywords": [
+    "JavaScript",
+    "Mongo",
+    "Angular",
+    "Express"
+  ],
+  "author": "Andreas Dagnell",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andreasdjs/mini-mean/issues"
