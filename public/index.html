@@ -9,11 +9,17 @@
 <body ng-app="app">
 	<div id="container">
 		<div ng-controller="myController">
-			<h1>Hello mini MEAN!</h1>
-			<a href="#">Link 1 </a>
-			<a href="#">Link 2 </a>
-			<a href="#">Link 3 </a>
-			<button ng-click="hello()">HELLO!</button>
+			<div><h1>Hello mini MEAN!</h1></div>
+			<div>
+				<a href="#">Link 1 </a>
+				<a href="#">Link 2 </a>
+				<a href="#">Link 3 </a>
+			</div>
+			<div><button ng-click="hello()">HELLO!</button></div>
+			<h3>Object</h3>
+			<div ng-repeat="car in cars track by $index">
+				{{ car.brand }} {{ car.model }} {{ car.year }} {{ car.license }}
+			</div>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
