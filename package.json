@@ -2,15 +2,16 @@
   "name": "mini-mean",
   "version": "1.0.0",
   "description": "Mini MEAN project. Mongo, Express, Angular, Node. Gulp. SASS.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreasdjs/mini-mean.git"
   },
-    "keywords": [
+  "keywords": [
     "JavaScript",
     "Mongo",
     "Angular",
@@ -28,7 +29,8 @@
     "gulp-minify-css": "^1.2.4",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0"
+    "gulp-sourcemaps": "^1.6.0",
+    "mongoose": "^4.4.12"
   },
   "devDependencies": {
     "gulp-livereload": "^3.8.1"
