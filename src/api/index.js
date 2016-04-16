@@ -1,9 +1,22 @@
 'use strict';
 
+var mongoose = require('mongoose'); 
 var express = require('express');
-//var Animal = require('../models/animal'); // eller vad vår model-fil heter
 
-var Animal = require('../models/model');
+var model  = require('../models/model');
+
+model.animal.find(function(err, animals){
+	if(err) {
+		return console.error('Error: ' + err);
+	} else {
+		console.log("trigger yay!");
+//		console.log(animals);
+		animals.forEach(function(animal){
+			console.log(animal.name);
+		});
+		mongoose.connection.close();
+	}
+});
 
 var router = express.Router();
 

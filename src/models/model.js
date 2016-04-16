@@ -1,13 +1,14 @@
 'use strict';
 
 var mongoose = require('mongoose');
+require('../database');
 
 var animalSchema = new mongoose.Schema({
 	name: String,
 	color: String,
-	fed: Boolean
+	weight: String
 });
 
-var model = mongoose.model('Animal', animalSchema);
+var animal = mongoose.model('Animal', animalSchema);
 
-module.exports = model;
+module.exports.animal = animal;
