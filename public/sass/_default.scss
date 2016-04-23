@@ -8,6 +8,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $defaultHeaderFont;
+    font-weight: 400;
 }
 
 a {
@@ -24,4 +25,10 @@ div#container {
     div {
 
     } 
+}
+
+.title {
+	font-size: 105px;
+	letter-spacing: 12px;
+	text-align: center;
 }
