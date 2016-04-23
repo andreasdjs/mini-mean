@@ -1,0 +1,55 @@
+
+/* 52 Skills */
+
+var skills = [
+	"Java", "JavaScript", "C#", "MVC", "Visual Studio", "ASP.NET", "Design Patterns", "Bootstrap", "NoSQL", "SEO", "Load Balancing", "Node.js", "AngularJS", "ReactJS", "MongoDB", "Mean Stack", "jQuery", "User Experience", "Web Design", "User Interface Design", "Photoshop", "Graphic Design", "HTML5", "CSS3", "Illustrator", "JSON", "Regular Expressions", "AJAX", "Git", "Gulp.js", "Web Typography", "SASS", "LESS", "Stylus", "Middleware", "Unit Testing", "Test Driven Development", "Copywriting", "Typography", "Agile Methodologies", "Kanban", "Scrum", "Drupal", "WordPress", "SQL", "Data Aggregation", "Eclipse", "Unix", "Linux", "Solaris", "JUnit", "Hudson"
+];
+var women = [
+	"Maria", "Elisabeth", "Anna", "Kristina", "Margareta", "Eva", "Birgitta", "Karin", "Linnéa", "Marie", "Ingrid", "Marianne", "Sofia", "Kerstin", "Lena", "Helena", "Sara", "Emma", "Katarina", "Johanna", "Inger", "Viktoria", "Cecilia", "Monica", "Susanne", "Elin ", "Jenny", "Therese", "Irene", "Anita", "Ulla", "Hanna", "Louise", "Carina", "Ingegerd", "Gunilla", "Viola", "Ann", "Linda", "Helen", "Ida ", "Malin", "Annika", "Matilda", "Ulrika", "Josefin", "Elsa", "Anette", "Barbro", "Sofie", "Anneli", "Astrid", "Caroline", "Siv", "Kristin", "Julia", "Alice", "Emelie", "Åsa", "Karolina", "Lisa", "Camilla", "Britt", "Madeleine", "Yvonne", "Amanda ", "Agneta", "Erika", "Rut", "Lovisa", "Gun", "Charlotte", "Sandra", "Berit", "Rebecka", "Frida", "Maja", "Ellinor", "Alexandra", "Ann-Marie", "Inga", "Jessica", "Isabelle ", "Märta", "Charlotta", "Ingeborg", "Emilia", "Ellen", "Ebba", "Birgit", "Sonja", "Klara", "Ann-Christin", "Maj", "Gunnel", "Pia", "Britta", "Lisbeth", "Mona", "Olivia"
+];
+var men = [
+	"Karl", "Erik", "Lars", "Anders", "Per", "Mikael", "Johan", "Olof", "Nils ", "Jan", "Gustav", "Lennart", "Hans", "Peter", "Gunnar", "Sven", "Fredrik", "Thomas", "Bengt", "Bo", "Daniel", "Åke", "Göran", "Alexander", "Oskar", "Christer", "Andreas", "Stefan", "Magnus", "Martin", "Mats", "John", "Mattias", "Leif", "Henrik", "Ulf", "Bertil", "Björn", "Jonas", "Arne", "Axel", "Ingemar", "Robert", "Christian", "Marcus", "Niklas", "Kjell", "Stig", "David", "Viktor", "Emil", "Håkan", "Rolf", "Patrik", "Rickard", "Christoffer", "Joakim", "Wilhelm", "Tommy", "Mohamed", "Roland", "Filip", "William", "Claes", "Ingvar", "Roger", "Simon", "Sebastian", "Anton", "Kent", "Ove", "Johannes", "Kenneth", "Tobias", "Jörgen", "Kurt", "Emanuel", "Jonathan", "Rune", "Jakob", "Robin", "Hugo ", "Gösta", "Elias", "Lucas", "Adam", "Georg", "Johnny", "Sten", "Linus", "Torbjörn", "Alf", "Börje", "Dan", "Bernt", "Arvid", "Allan", "Albin", "Josef", "Oliver"
+];
+
+/********************************************************/
+
+for(i= 0; i < 100; i++){
+	db.skills.insert(
+	{
+		"user" : "user"+i,
+		"name" : women[i],
+		"skills" : skills[Math.floor(Math.random() * 52)]
+	});
+}
+
+for(i= 0; i < 100; i++){
+	var j = 100 + i;
+	db.skills.insert(
+	{
+		"user" : "user"+j,
+		"name" : men[i],		
+		"skills" : skills[Math.floor(Math.random() * 52)]
+	});
+}
+
+/********************************************************/
+
+
+for(i= 0; i < 100; i++){
+	db.skills.insert(
+	{
+		"user" : "user"+i,
+		"name" : women[i],
+		"skills" : skills[Math.floor(Math.random() * 52)]
+	});
+}
+
+
+for(i= 0; i < 100; i++){
+	db.skills.insert(
+	{
+		"user" : "user"+i,
+		"skill" : Math.floor(Math.random() * 52)
+	});
+}
+
