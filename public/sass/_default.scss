@@ -23,14 +23,25 @@ div#container {
 /*    @include background($color:$backgroundColorContainer); */
     margin: 0 auto;
     height: 100%;
-    div {
-
-    } 
+    div#logo {
+/*    	background-color: #c0c0c0; */
+    	height: 160px;
+/*    	border-bottom: 8px solid $defaultTextColor; */
+    }
+	.title {
+		font-size: 105px;
+		margin-top: 0px;
+		padding-top: 30px;
+		letter-spacing: 12px;
+		text-align: center;
+		color: $defaultTextColor;
+	}
+    div#innerContainer {
+        border-top: 1px solid $defaultTextColor; 
+        margin: auto 100px;
+    }
+    div#footer {
+    	min-height: 100px;
+    }
 }
 
-.title {
-	font-size: 105px;
-	letter-spacing: 12px;
-	text-align: center;
-	color: $defaultTextColor;
-}

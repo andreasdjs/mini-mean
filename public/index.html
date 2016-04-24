@@ -16,23 +16,33 @@
 <body ng-app="app">
 	<div id="container">
 		<div ng-controller="myController">
-			<div><h1 class="title">EDUNOW</h1></div>
+			<div id="logo"><h1 class="title">EDUNOW</h1></div>
+<!--
 			<div>
 				<a href="#">Link 1 </a>
 				<a href="#">Link 2 </a>
 				<a href="#">Link 3 </a>
 			</div>
-			<div><button ng-click="hello()">HELLO!</button></div>
-			<h3>Object</h3>
+-->
+<!--			<div><button ng-click="hello()">HELLO!</button></div>-->
+			<div id="innerContainer">
+			<h1>Users</h1>
+			<div ng-repeat="user in skills track by $index">
+				<b>{{ user.name }}</b> <span ng-repeat="skill in user.skills track by $index">{{ skill }}</span>
+			</div>			
+<!--
 			<div ng-repeat="car in cars track by $index">
 				{{ car.brand }} {{ car.model }} {{ car.year }} {{ car.license }}
+			</div> -->
 			</div>
+			<div id="footer"> </div>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js"></script>
 	<script src="scripts/app.js" type="text/javascript"></script>
-	<script src="scripts/directives.js" type="text/javascript"></script>
-	<script src="scripts/controllers.js" type="text/javascript"></script>	
 	<script src="scripts/services.js" type="text/javascript"></script>	
+	<script src="scripts/controllers.js" type="text/javascript"></script>
+	<script src="scripts/directives.js" type="text/javascript"></script>
 </body>
 </html>

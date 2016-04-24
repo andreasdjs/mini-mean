@@ -27,18 +27,18 @@ router.get('/users', function(req, res) {
 
 router.get('/skills', function(req, res) {
 	console.log("trigger");
-/*      
+
   users.model.find({}, function(err, skills) {
     if (err) {
       return res.status(500).json({ message: err.message });
     }
 
     res.json({ skills: skills });
-  }); */
+  }); 
 
 });
 
-
+/* Dump users & skills in console.log */
 
 users.model.find(function(err, users){
 	if(err) {
@@ -56,10 +56,8 @@ users.model.find(function(err, users){
 			console.log("-------------------------");
 		});
 			console.log("Finished!");
-
 	}
 });
-
 
 
 
@@ -139,7 +137,6 @@ model.animal.find(function(err, animals){
 });
 */
 
-//var router = express.Router();
 
 /*
 router.get...

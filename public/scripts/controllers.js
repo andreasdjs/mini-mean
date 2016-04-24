@@ -1,7 +1,14 @@
 'use strict';
 
 
-app.controller('myController', function($scope, $http, $compile) {
+//app.controller('myController', function($scope, $http, $compile) {
+
+app.controller('myController', function($scope, dataService) {
+	
+	  dataService.getSkills(function(response) {
+	    $scope.skills =  response.data.skills;
+	  });
+
 
 	$scope.hello = function () {
 		console.log("tittut");
