@@ -4,7 +4,9 @@ var mongoose = require('mongoose');
 require('../database');
 
 var userSchema = new mongoose.Schema({
-	name: String,
+	firstname: String,
+	lastname: String,
+//	name: String,
 	skills: []
 }, { versionKey: false }); 
 
