@@ -4,7 +4,7 @@
 //app.controller('myController', function($scope, $http, $compile) {
 
 app.controller('myController', function($scope, dataService) {
-	
+
 	  dataService.getSkills(function(response) {
 	    $scope.skills =  response.data.skills;
 	  });
@@ -14,50 +14,19 @@ app.controller('myController', function($scope, dataService) {
 		console.log("tittut");
 	}
 
-	$scope.cars = [
-	 	{
-	 		"license" : "ABC123",
-	 		"brand" : "Volvo",
-	 		"model" : "Z5000",
-	 		"year" :  "2050",
-			"visibleBrandInput" : false,
-			"visibleYearInput" : false,
-			"visibleModelInput" : false,
-	 		"visibleLicenseInput" : false
-	 	},
-	 	{
-	 		"license" : "XYZ777",
-	 		"brand" : "Volvo",
-	 		"model" : "Z5000",
-	 		"year" :  "2050",
-			"visibleBrandInput" : false,
-			"visibleYearInput" : false,
-			"visibleModelInput" : false,
-	 		"visibleLicenseInput" : false
-	 	},
+	$scope.mySkills = [
+		{
+			"skills" : [ 
+				"JavaScript",
+				"Node.js",
+				"Gulp",
+				"SASS",
+				"Git"
+			]
+		}
+	];
 
-	 	{
-	 		"license" : "TNY666",
-	 		"brand" : "Volvo",
-	 		"model" : "Z5000",
-	 		"year" :  "2050",
-			"visibleBrandInput" : false,
-			"visibleYearInput" : false,
-			"visibleModelInput" : false,
-	 		"visibleLicenseInput" : false
-	 	},
-	 	{
-	 		"license" : "GPS111",
-	 		"brand" : "Volvo",
-	 		"model" : "Z5000",
-	 		"year" :  "2050",
-			"visibleBrandInput" : false,
-			"visibleYearInput" : false,
-			"visibleModelInput" : false,
-	 		"visibleLicenseInput" : false
-	 	},
-	 ];
-
+/*
 	 $scope.save = function (car, index) {
 	 	console.log("Save triggered!");
 	 	console.log(car.brand);
@@ -65,8 +34,8 @@ app.controller('myController', function($scope, dataService) {
 	 	console.log(car.year);
 	 	console.log(car.license);
 	 	console.log(index);
-//	 	$scope.cars[index].brand = car.brand;
 	 }
+*/
 
 });
 

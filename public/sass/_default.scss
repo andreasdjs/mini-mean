@@ -25,7 +25,8 @@ div#container {
     height: 100%;
     div#logo {
 /*    	background-color: #c0c0c0; */
-    	height: 160px;
+    	height: 127px;
+/*    	height: 160px; */
 /*    	border-bottom: 8px solid $defaultTextColor; */
     }
 	.title {
@@ -45,8 +46,10 @@ div#container {
     	min-height: 100px;
     }
     div.user {
-	line-height:32px;
+	line-height:30px;
+	margin-bottom:4px;
 		span.name {
+			white-space:nowrap; 
 			margin-right:10px;
 		}
 	}
@@ -54,7 +57,7 @@ div#container {
 
 span.skill {
 	background-color: #f0f0f0;
-	margin-right: 2px;
+	margin-right: 1px;
 /*	margin-right:4px; */
 	/* top-bottom right-left */
 	padding: 2px 8px;

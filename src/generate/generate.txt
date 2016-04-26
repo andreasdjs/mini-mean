@@ -177,6 +177,28 @@ DBQuery.shellBatchSize = 200
 /** Aggregate
 /********************************************************/
 
+/* Count
+
+db.skills.count(
+	{ "skills" : { "$in" : ["JavaScript"]}}
+) 
+
+/* Match "Javascipt"
+
+db.skills.aggregate(
+	{ $match : 	
+				{ "skills" : { "$in" : ["JavaScript"]}},
+	},
+	{"$project" : 
+		{ 
+			"User" : "$user",
+			"Firstname" : "$firstname",
+			"Lastname" : '$lastname',
+			 "_id" : 0
+		}
+	},
+	{ $sort : {Lastname : 1}}
+) 
 
 db.skills.aggregate(
 	{ $match : 	
