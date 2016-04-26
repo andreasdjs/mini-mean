@@ -43,21 +43,27 @@ div#container {
     div#footer {
     	min-height: 100px;
     }
+    div.user {
+	line-height:32px;
+		span.name {
+			margin-right:10px;
+		}
+	}
 }
 
 span.skill {
 	background-color: #f0f0f0;
-	margin: 2px;
-	margin-right:4px;
-	padding: 8px;
+	margin-right: 2px;
+/*	margin-right:4px; */
+	/* top-bottom right-left */
+	padding: 2px 8px;
+	white-space:nowrap; /* No line-break */
+/*	padding: 8px;
 	padding-top: 2px;
-	padding-bottom: 2px;
+	padding-bottom: 2px; */
 	&:hover {
         background-color: white;
         color: black;
     }
 }
 
-div.user {
-	height: 34px;
-}

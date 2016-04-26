@@ -28,7 +28,7 @@
 			<div id="innerContainer">
 			<h1>Users</h1>
 			<div ng-repeat="user in skills track by $index" class="user">
-				<b>{{ user.firstname }} {{ user.lastname }} </b> <span ng-repeat="skill in user.skills track by $index" class="skill">{{ skill }} </span>
+				<span class="name"><b>{{ user.firstname }} {{ user.lastname }}</b></span><span ng-repeat="skill in user.skills track by $index"><span class="skill">{{ skill }}</span> </span>
 			</div>			
 <!--
 			<div ng-repeat="car in cars track by $index">

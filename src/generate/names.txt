@@ -9,3 +9,7 @@ http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Befolkning/Amnesoverg
 Firstname: men
 
 http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Befolkning/Amnesovergripande-statistik/Namnstatistik/30898/30905/Samtliga-folkbokforda--Fornamn-och-tilltalsnamn-topplistor/286715/
+
+Lastname:
+
+http://www.scb.se/sv_/hitta-statistik/statistik-efter-amne/befolkning/amnesovergripande-statistik/namnstatistik/30898/30905/samtliga-folkbokforda--efternamn-topplistor/31063/
