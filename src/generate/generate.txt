@@ -173,3 +173,27 @@ db.skills.find({"name" : /^.*$/}, {"name" : 1, "_id" : 0}).pretty()
 
 DBQuery.shellBatchSize = 200
 
+/********************************************************/
+/** Aggregate
+/********************************************************/
+
+
+db.skills.aggregate(
+	{ $match : 	
+			{ $and : 
+				[
+				{ "skills" : { "$in" : ["JavaScript"]}},
+				{ "skills" : { "$in" : ["Kanban"]}}
+				]
+			}
+	},
+	{"$project" : 
+		{ 
+			"User" : "$user",
+			"Firstname" : "$firstname",
+			"Lastname" : '$lastname',
+			 "_id" : 0
+		}
+	},
+	{ $sort : {Lastname : 1}}
+) 

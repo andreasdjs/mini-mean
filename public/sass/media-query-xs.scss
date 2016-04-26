@@ -1,0 +1,20 @@
+/*@media (min-width: $screen-xs) { */  
+
+@media (min-width: 480px) {
+	div#container {
+	    div#logo {
+	    	height: 160px;
+	    }
+		.title {
+			font-size: 72px;
+			padding-top: 30px;
+			letter-spacing: 6px;
+			color: $defaultTextColor;
+		}
+	}
+
+}
+
+
+
+
