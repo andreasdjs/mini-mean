@@ -1,6 +1,4 @@
-/*@media (min-width: $screen-xs) { */  
-
-@media (min-width: 480px) {
+@media (min-width: $screen-xs) { 
 	div#container {
 	    div#logo {
 	    	height: 127px;
@@ -9,12 +7,9 @@
 			font-size: 72px;
 			padding-top: 30px;
 			letter-spacing: 6px;
-			color: $defaultTextColor;
 		}
 	}
 
 }
-
-
 
 

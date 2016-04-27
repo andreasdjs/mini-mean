@@ -7,7 +7,7 @@ $appVersion: "1.0.0";
 /*************************** COLORS *******************************/
 /******************************************************************/
 
-$defaultTextColor: #202020;
+$defaultTextColor: #202020; 
 $defaultLinkColor: $defaultTextColor;
 $defaultLinkHoverColor: #30F010;
 
@@ -29,6 +29,8 @@ $defaultHeaderFont: "futura-pt", "Helvetica Neue", "Helvetica", "Garamond", "Seg
 // Media queries breakpoints
 // --------------------------------------------------
 
+$hellothere: green;
+
 // Extra small screen / phone
 $screen-xs: 480px;
 $screen-phone: $screen-xs;
@@ -48,3 +50,5 @@ $screen-lg-desktop: $screen-lg;
 // Extra large screen / extra wide desktop
 $screen-xl: 1550px;
 $screen-xl-desktop: $screen-xl;
+
+
