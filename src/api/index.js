@@ -48,14 +48,15 @@ users.model.find(function(err, users){
 			console.log("trigger!");
 
 		users.forEach(function(user){
-			console.log(user.name);
+			console.log(user.firstname + " " + user.lastname);
+			console.log("-------------------------");
 			/* skills */
 			user.skills.forEach(function(skill){
 				console.log(skill);
 			});
 			console.log("-------------------------");
 		});
-			console.log("Finished!");
+//			console.log("Finished!");
 	}
 });
 
