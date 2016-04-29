@@ -10,7 +10,7 @@ var modules = require('../modules/modules');
 /* Get all users and their skills */
 
 router.get('/skills', function(req, res) {
-	console.log("trigger");
+	console.log("Requesting skills.");
 
   users.model.find({}, function(err, skills) {
     if (err) {
@@ -18,7 +18,7 @@ router.get('/skills', function(req, res) {
     }
 
     res.json({ skills: skills });
-    
+
   }); 
 
 });
@@ -27,7 +27,7 @@ router.get('/skills', function(req, res) {
 /* Get all top ten matching users based on skills */
 
 router.get('/skillsTopMatches', function(req, res) {
-
+	console.log("Requesting top 10 matches.");
 	// Return top 10 matches
     res.json(modules.getTopTenMatches());
 

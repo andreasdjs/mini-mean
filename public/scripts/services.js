@@ -2,19 +2,29 @@
 
 app.service('dataService', function($http) {
 
+  /* Get all users and their skills */
+
   this.getSkills = function(cb) {
     $http.get('/api/skills').then(cb);
   };
+
+  /* Get list of top 10 users matching current users skills */
 
   this.getSkillsTopMatches = function(cb) {
     $http.get('/api/skillsTopMatches').then(cb);
   };
 
+  /* More information about each skill */
 
-/*
-  this.getAnimals = function(cb) {
-    $http.get('/api/animals').then(cb);
-  };*/
+  this.getSkillDetails = function(cb) {
+    $http.get('/api/getSkillDetails').then(cb);
+  };
+
+  /* Delete skill by user */
+
+
+  /* Update/add skill by user */
+
 
 /*
   this.deleteAnimal = function(animal) {
