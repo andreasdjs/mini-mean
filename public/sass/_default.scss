@@ -78,6 +78,15 @@ span.skill {
 }    
 */
 
+/*
+.delete {
+    white-space: nowrap;
+} */
+
+.hello {
+    white-space: nowrap;    
+}
+
 /* chain-selecting double class */
 
 span.skill.deletehover { 
@@ -121,7 +130,10 @@ button {
     }
 }
 
-
+button.addFriend {
+  padding: 0px 12px;
+  margin-left: 6px;
+}
 
 
 

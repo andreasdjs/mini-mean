@@ -17,21 +17,15 @@
 	<div id="container">
 		<div ng-controller="myController">
 			<div id="logo"><h1 class="title">EDUNOW</h1></div>
-<!--
-			<div>
-				<a href="#">Link 1 </a>
-				<a href="#">Link 2 </a>
-				<a href="#">Link 3 </a>
-			</div>
--->
-<!--			<div><button ng-click="hello()">HELLO!</button></div>-->
+
 			<div id="innerContainer">
 
 			<h1>My profile</h1>
-			<div ng-repeat="skills in mySkills track by $index" class="user">
-				<span class="name"><b>John Doe</b></span>
 
-				<span ng-repeat="skill in skills.skills track by $index"><span ng-class="{'deletehover' : hovering, 'skill' : true }">{{ skill }} <span class="delete" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false"> <sup>x</sup></span></span> </span>
+			<div class="user">
+				<span class="name"><b>{{ me.firstname }} {{ me.lastname }}</b></span>
+
+				<span ng-repeat="skill in me.skills track by $index"><span ng-class="{'deletehover' : hovering, 'skill' : true }">{{ skill }} <span class="delete" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false"><sup>x</sup></span></span> </span>
 
 			</div>
 
@@ -44,27 +38,24 @@
 
 			<div ng-repeat="user in topSkills track by $index" class="user">
 
-				<div class="name"><b>{{ user.firstname }} {{ user.lastname }}</b></div> 
+				<div class="name"><b>{{ user.firstname }} {{ user.lastname }}</b> <button class="addFriend">Add friend</button></div> 
 
 				<div>
-				<span>Number of matches: {{ user.matches }}</span> 
+				<span>Skills:</span> 
 
 				<span ng-repeat="skill in user.skills track by $index"><span class="skill">{{ skill }}</span> </span>
 				</div> 
 				<div>
-				Matching skills: 
+				Matching skills ({{ user.matches }}): 
 				<span ng-repeat="skill in user.matchingSkills track by $index"><span class="skill">{{ skill }}</span> </span>
 				</div>
 			</div>
-
+<!--
 			<h1>Users</h1>
 			<div ng-repeat="user in skills track by $index" class="user">
 				<span class="name"><b>{{ user.firstname }} {{ user.lastname }}</b></span><span ng-repeat="skill in user.skills track by $index"><span class="skill">{{ skill }}</span> </span>
 			</div>			
-<!--
-			<div ng-repeat="car in cars track by $index">
-				{{ car.brand }} {{ car.model }} {{ car.year }} {{ car.license }}
-			</div> -->
+-->
 			</div>
 			<div id="footer"> </div>
 		</div>

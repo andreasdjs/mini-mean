@@ -1,11 +1,27 @@
 'use strict';
 
 var express = require('express');
-//var model  = require('../models/model');
 var users  = require('../models/users');
 var router = express.Router();
 var modules = require('../modules/modules');
 
+
+/* Get skill object for current user */
+/*
+router.get('/currentSkills', function(req, res) {
+	console.log("Requesting skills.");
+
+  users.model.find({}, function(err, skills) {
+    if (err) {
+      return res.status(500).json({ message: err.message });
+    }
+
+    res.json({ skills: skills });
+
+  }); 
+
+});
+*/
 
 /* Get all users and their skills */
 
@@ -28,8 +44,19 @@ router.get('/skills', function(req, res) {
 
 router.get('/skillsTopMatches', function(req, res) {
 	console.log("Requesting top 10 matches.");
-	// Return top 10 matches
-    res.json(modules.getTopTenMatches());
+
+	// To be able to modify the object lean().exec() is used  //
+
+	users.model.find().lean().exec({}, function(err, skills) {
+	    if (err) {
+	      return res.status(500).json({ message: err.message });
+		}
+
+		var currentUser = "user201";
+
+	    res.json(modules.getTopTenMatches(currentUser, skills));
+
+	}); 
 
 });
 

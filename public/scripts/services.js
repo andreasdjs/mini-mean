@@ -10,6 +10,8 @@ app.service('dataService', function($http) {
 
   /* Get list of top 10 users matching current users skills */
 
+// $scope.me.user
+
   this.getSkillsTopMatches = function(cb) {
     $http.get('/api/skillsTopMatches').then(cb);
   };

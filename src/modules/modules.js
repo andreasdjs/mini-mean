@@ -5,116 +5,90 @@
 /*************************************/
 
 /* 
-** Get top ten user matchdes based on skills. 
+** Current profile mock object
 */
 
-// Dummy object
 
-var profiles = {
-skills: 	
-	[
-		{
-			"firstname" : "Anna",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 1
-		},
-		{
-			"firstname" : "Anders",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 5
-		},
-		{
-			"firstname" : "Agnes",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 3
-		},
-		{
-			"firstname" : "Alicia",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 2
-		},
-		{
-			"firstname" : "Anton",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 4
-		},
-		{
-			"firstname" : "Bengt",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 6
-		},
-		{
-			"firstname" : "Alicia",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 8
-		},		{
-			"firstname" : "Alicia",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],			
-			"matches" : 12
-		},		{
-			"firstname" : "Alicia",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 0
-		},		{
-			"firstname" : "Alicia",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 0
-		},		{
-			"firstname" : "Alicia",
-			"lastname" : "Andersson",
-			"skills" : ["Node.js", "JavaScript", "Photoshop"],
-			"matchingSkills" : ["Node.js", "JavaScript"],
-			"matches" : 3
-		}
+var thisIsMe = {
+	"user" : "user201",
+	"firstname" : "John",
+	"lastname" : "Doe",
+	"skills" : [
+		"JavaScript",
+		"Node.js",
+		"AngularJS",
+		"MongoDB",
+		"User Experience",
+		"Web Design",
+		"User Interface Design",
+		"Photoshop",
+		"Mean Stack",
+		"Git",
+		"SASS",
+		"Gulp.js"
 	]
 }
 
-function getTopTenMatches (user, data) {
 
-/*
-	console.log("-------------------------");
-	console.log(user);
-	console.log("-------------------------");
-	console.log(data);
-	console.log("-------------------------");
-*/
-
-
-/*
-	var obj = { 
-		[
-			{	
-				"test" : "test"
-			}
-		]
-	};
-*/
-
-	return profiles;
+function findMatches (obj) {
+	return obj;
 }
 
-function hello() {
-	console.log("Hello my friend!");
+function firstNresult (n, obj) {
+	return obj.slice(0, n);
+}
+
+/* 
+** Get top ten user matchdes based on skills. 
+*/
+
+
+function getTopTenMatches (user, skills) {
+
+	skills.forEach(function (el) {
+
+		var counter = 0;
+		var numberOfMatches = 0;
+		var numberOfSkills = 0;
+		var matchingSkills = [];
+
+		el.skills.forEach(function (element) {
+
+			numberOfSkills = numberOfSkills+1;
+
+			thisIsMe.skills.forEach(function (meSkills) {
+
+				if (element === meSkills) {
+					numberOfMatches = numberOfMatches+1;
+					matchingSkills.push(element);
+				}
+
+			});
+
+		});
+		el.matches = numberOfMatches;
+		el.numberOfSkills = numberOfSkills;
+		el.matchingSkills = matchingSkills;
+
+	});
+
+	function sortMatches (profile) {
+
+		profile.sort(function(a, b){
+			 return a.matches-b.matches;
+		});
+		profile.reverse(); 
+
+		return profile;
+	}	
+
+
+	sortMatches(skills);
+
+	var newSkills = { skills : skills.slice(0,10)};
+
+	return newSkills;
+
 }
 
 
@@ -124,7 +98,6 @@ function hello() {
 
 module.exports.getTopTenMatches = getTopTenMatches;
 
-module.exports.hello = hello;
 
 
 

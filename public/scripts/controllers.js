@@ -20,6 +20,26 @@ app.controller('myController', function($scope, dataService) {
 		console.log("tittut");
 	}
 
+	$scope.me = {
+		"user" : "user201",
+		"firstname" : "John",
+		"lastname" : "Doe",
+		"skills" : [
+			"JavaScript",
+			"Node.js",
+			"AngularJS",
+			"MongoDB",
+			"User Experience",
+			"Web Design",
+			"User Interface Design",
+			"Photoshop",
+			"Mean Stack",
+			"Git",
+			"SASS",
+			"Gulp.js"
+		]
+	}
+
 	$scope.mySkills = [
 		{
 			"skills" : [ 
