@@ -9,6 +9,10 @@ app.controller('myController', function($scope, dataService) {
 	    $scope.skills =  response.data.skills;
 	  });
 
+	  dataService.getSkillsTopMatches(function(response) {
+	    $scope.topSkills =  response.data.skills;
+	  });
+
 
 	$scope.hello = function () {
 		console.log("tittut");

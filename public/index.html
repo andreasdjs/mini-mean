@@ -26,11 +26,35 @@
 -->
 <!--			<div><button ng-click="hello()">HELLO!</button></div>-->
 			<div id="innerContainer">
+
 			<h1>My profile</h1>
 			<div ng-repeat="skills in mySkills track by $index" class="user">
 				<span class="name"><b>John Doe</b></span>
-				<span ng-repeat="skill in skills.skills track by $index"><span class="skill">{{ skill }}</span> </span>
+				<span ng-repeat="skill in skills.skills track by $index"><span class="skill">{{ skill }} <span class="delete"> x </span></span> </span>
 			</div>
+
+			<div>
+				<input></input>
+				<button>Add skill</button>
+			</div>
+
+			<h1>Matches</h1>
+
+			<div ng-repeat="user in topSkills track by $index" class="user">
+
+				<div class="name"><b>{{ user.firstname }} {{ user.lastname }}</b></div> 
+
+				<div>
+				<span>Number of matches: {{ user.matches }}</span> 
+
+				<span ng-repeat="skill in user.skills track by $index"><span class="skill">{{ skill }}</span> </span>
+				</div> 
+				<div>
+				Matching skills: 
+				<span ng-repeat="skill in user.matchingSkills track by $index"><span class="skill">{{ skill }}</span> </span>
+				</div>
+			</div>
+
 			<h1>Users</h1>
 			<div ng-repeat="user in skills track by $index" class="user">
 				<span class="name"><b>{{ user.firstname }} {{ user.lastname }}</b></span><span ng-repeat="skill in user.skills track by $index"><span class="skill">{{ skill }}</span> </span>

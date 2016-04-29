@@ -6,6 +6,11 @@ app.service('dataService', function($http) {
     $http.get('/api/skills').then(cb);
   };
 
+  this.getSkillsTopMatches = function(cb) {
+    $http.get('/api/skillsTopMatches').then(cb);
+  };
+
+
 /*
   this.getAnimals = function(cb) {
     $http.get('/api/animals').then(cb);

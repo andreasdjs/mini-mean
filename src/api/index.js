@@ -3,27 +3,11 @@
 var express = require('express');
 //var model  = require('../models/model');
 var users  = require('../models/users');
-
 var router = express.Router();
+var modules = require('../modules/modules');
 
-/* READ USERS*/ /* */
 
-
-// get all animals
-/*
-
-router.get('/users', function(req, res) {
-  users.find({}, function(err, users) {
-    if (err) {
-      return res.status(500).json({ message: err.message });
-    }
-    console.log("GET triggered");
-    res.json({ users: users });
-  });
-});
-*/
-// get all animals
-
+/* Get all users and their skills */
 
 router.get('/skills', function(req, res) {
 	console.log("trigger");
@@ -34,12 +18,25 @@ router.get('/skills', function(req, res) {
     }
 
     res.json({ skills: skills });
+    
   }); 
 
 });
 
+
+/* Get all top ten matching users based on skills */
+
+router.get('/skillsTopMatches', function(req, res) {
+
+	// Return top 10 matches
+    res.json(modules.getTopTenMatches());
+
+});
+
+
 /* Dump users & skills in console.log */
 
+/*
 users.model.find(function(err, users){
 	if(err) {
 		return console.error('Error: ' + err);
@@ -50,16 +47,15 @@ users.model.find(function(err, users){
 		users.forEach(function(user){
 			console.log(user.firstname + " " + user.lastname);
 			console.log("-------------------------");
-			/* skills */
+
 			user.skills.forEach(function(skill){
 				console.log(skill);
 			});
 			console.log("-------------------------");
 		});
-//			console.log("Finished!");
 	}
 });
-
+*/
 
 
 /* READ */
