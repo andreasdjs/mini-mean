@@ -5,6 +5,8 @@
 
 app.controller('myController', function($scope, dataService) {
 
+	$scope.hovering = false;
+
 	  dataService.getSkills(function(response) {
 	    $scope.skills =  response.data.skills;
 	  });

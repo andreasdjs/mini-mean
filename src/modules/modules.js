@@ -91,12 +91,13 @@ skills:
 
 function getTopTenMatches (user, data) {
 
+/*
 	console.log("-------------------------");
 	console.log(user);
 	console.log("-------------------------");
 	console.log(data);
 	console.log("-------------------------");
-
+*/
 
 
 /*

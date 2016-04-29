@@ -57,18 +57,36 @@ div#container {
 }
 
 span.skill {
-	background-color: #f0f0f0;
+	background-color: #f0f0f0; 
 	margin-right: 1px;
-/*	margin-right:4px; */
-	/* top-bottom right-left */
 	padding: 2px 8px;
-	white-space:nowrap; /* No line-break */
-/*	padding: 8px;
-	padding-top: 2px;
-	padding-bottom: 2px; */
+	white-space: nowrap; 
 	&:hover {
         background-color: white;
         color: black;
     }
 }
+
+/*
+.delete {
+    padding-left: 4px;
+    padding-right: 0px;
+    &:hover {
+    background-color: red;
+    color: white;
+    }
+}    
+*/
+
+/* chain-selecting double class */
+
+span.skill.deletehover { 
+    background-color: red;
+    color: white; 
+}
+
+
+
+
+
 
