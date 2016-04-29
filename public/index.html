@@ -31,7 +31,7 @@
 			<div ng-repeat="skills in mySkills track by $index" class="user">
 				<span class="name"><b>John Doe</b></span>
 
-				<span ng-repeat="skill in skills.skills track by $index"><span ng-class="{'deletehover' : hovering, 'skill' : true }">{{ skill }} <span class="delete" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false"> x</span></span> </span>
+				<span ng-repeat="skill in skills.skills track by $index"><span ng-class="{'deletehover' : hovering, 'skill' : true }">{{ skill }} <span class="delete" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false"> <sup>x</sup></span></span> </span>
 
 			</div>
 
