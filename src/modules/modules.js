@@ -31,6 +31,8 @@ var thisIsMe = {
 }
 */
 
+/* Placeholders for separated functions. */
+
 function findMatches (obj) {
 	return obj;
 }

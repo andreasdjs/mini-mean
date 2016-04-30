@@ -1,5 +1,9 @@
 'use strict';
 
+/* Not in use. Delete. */
+
+/*
+
 var mongoose = require('mongoose');
 require('../database');
 
@@ -12,3 +16,5 @@ var animalSchema = new mongoose.Schema({
 var animal = mongoose.model('Animal', animalSchema);
 
 module.exports.animal = animal;
+
+*/

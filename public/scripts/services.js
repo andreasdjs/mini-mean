@@ -2,6 +2,12 @@
 
 app.service('dataService', function($http) {
 
+  /* Get current user */
+
+   this.getCurrentUser = function(cb) {
+    $http.get('/api/currentUser').then(cb);
+  }; 
+
   /* Get all users and their skills */
 
   this.getSkills = function(cb) {
@@ -26,14 +32,14 @@ app.service('dataService', function($http) {
 
    this.updateSkills = function(me) {
 
+/*
     console.log("Trigger save service");
     console.log(me);
     console.log(me.user);
     console.log("------");
-
+*/
 
       $http.put('/api/updateSkills/' + me.user, me).then(function(result) {
-          console.log("Bang!");
 //        return result.data.animal;
       });
 

@@ -6,7 +6,6 @@ require('../database');
 var userSchema = new mongoose.Schema({
 	firstname: String,
 	lastname: String,
-//	name: String,
 	location: String,
 	skills: []
 }, { versionKey: false }); 

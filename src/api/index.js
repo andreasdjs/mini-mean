@@ -25,6 +25,32 @@ router.get('/currentSkills', function(req, res) {
 
 /* Get all users and their skills */
 
+router.get('/currentUser', function(req, res) {
+	console.log("Requesting current user.");
+
+	var currentUser = "user200"; // placeholder for user logged in
+
+  users.model.find({ user : currentUser }, function(err, skills) {
+    if (err) {
+      return res.status(500).json({ message: err.message });
+    }
+
+//    console.log("Current User:")
+//    console.log(skills);
+    var newMe = skills[0];
+ //   console.log(newMe);
+    res.json(newMe);
+//    res.json({ skills: skills });
+
+  }); 
+
+});
+
+
+
+
+/* Get all users and their skills */
+
 router.get('/skills', function(req, res) {
 	console.log("Requesting skills.");
 
@@ -52,7 +78,7 @@ router.get('/skillsTopMatches', function(req, res) {
 	      return res.status(500).json({ message: err.message });
 		}
 
-		var currentUser = "user200";
+		var currentUser = "user200"; // placeholder for user logged in
 
 	    res.json(modules.getTopTenMatches(currentUser, skills));
 
@@ -68,13 +94,18 @@ router.put('/updateSkills/:user', function(req, res) {
 
 	var user = req.params.user;
 	var thisIsNewMe = req.body;
+//	console.log(thisIsNewMe._id);
+//	console.log(thisIsNewMe);
+
+/*
 	console.log(thisIsNewMe);
 	console.log(user);
-
+*/
 // ID
 // 5724c1b84011bb7d4787e3d6
-	var id = "5724c1b84011bb7d4787e3d6";
+//	var id = "5724c1b84011bb7d4787e3d6";
 
+	var id = thisIsNewMe._id;
 
   users.model.findByIdAndUpdate(id, thisIsNewMe, {new: true}, function(err, todo) {
     if (err) {

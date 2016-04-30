@@ -5,15 +5,21 @@
 
 app.controller('myController', function($scope, dataService) {
 
-	$scope.hovering = false;
+	$scope.hovering = false; // detecting hover for delete class
 
-	  dataService.getSkills(function(response) {
-	    $scope.skills =  response.data.skills;
-	  });
+	dataService.getCurrentUser(function(response) {
+		$scope.me =  response.data;
+//		console.log("trigger get currentUser");
+//		console.log($scope.me);
+	});
 
-	  dataService.getSkillsTopMatches(function(response) {
-	    $scope.topSkills =  response.data.skills;
-	  });
+	dataService.getSkills(function(response) {
+		$scope.skills =  response.data.skills;
+	});
+
+	dataService.getSkillsTopMatches(function(response) {
+		$scope.topSkills =  response.data.skills;
+	});
 
 	$scope.removeSkill = function (index) {
 //		console.log("Remove skill triggered.");
@@ -24,31 +30,19 @@ app.controller('myController', function($scope, dataService) {
 	}
 
 	$scope.addSkill = function (newSkill) {
-		console.log("Add skill triggered.");
-		console.log(newSkill);
+//		console.log("Add skill triggered.");
+//		console.log(newSkill);
 		$scope.me.skills.push(newSkill);
 		$scope.saveSkills();
 	}
 
 	$scope.saveSkills = function() {
-		console.log("Save skills triggered.");
-		console.log($scope.me);
-
+//		console.log("Save skills triggered.");
+//		console.log($scope.me);
 	    dataService.updateSkills($scope.me);
+	}
 
 /*
-	  dataService.updateSkills(function(response) {
-	  	console.log("saveSkills service triggered.");
-	//    $scope.topSkills =  response.data.skills;
-	  });
-*/
-	}
-
-
-	$scope.hello = function () {
-		console.log("tittut");
-	}
-
 	$scope.me = {
 		"user" : "user200",
 		"firstname" : "John",
@@ -69,30 +63,6 @@ app.controller('myController', function($scope, dataService) {
 		],
 		"location" : "Göteborg"
 	}
-
-/*
-	$scope.mySkills = [
-		{
-			"skills" : [ 
-				"JavaScript",
-				"Node.js",
-				"Gulp",
-				"SASS",
-				"Git"
-			]
-		}
-	];
-*/	
-
-/*
-	 $scope.save = function (car, index) {
-	 	console.log("Save triggered!");
-	 	console.log(car.brand);
-	 	console.log(car.model);
-	 	console.log(car.year);
-	 	console.log(car.license);
-	 	console.log(index);
-	 }
 */
 
 });
