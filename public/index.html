@@ -21,9 +21,22 @@
 			<div id="innerContainer">
 
 			<h1>My profile</h1>
+<!--
+			<div class="user">
+			<span class="name"><b>{{ me.firstname }} {{ me.lastname }}</b></span>
+			<span>{{ me.firstname }} {{ me.lastname }}</span>
+			<span ng-repeat="skill in me.skills track by $index">
+				<span ng-class="{'deletehover' : hovering, 'skill' : true }">{{ skill }}<span ng-mouseenter="hovering=true" ng-mouseleave="hovering=false"> <sup>x</sup></span>
+				</span>
+			</span>
+
+			</div>-->
 
 			<div class="user">
-				<span class="name"><b>{{ me.firstname }} {{ me.lastname }}</b></span>
+<!--				<span class="name"><b>{{ me.firstname }} {{ me.lastname }}</b></span>-->
+<!--
+				<div class="name"><b>{{ me.firstname }} {{ me.lastname }}</b></div>
+				Skills:-->
 
 				<span ng-repeat="skill in me.skills track by $index"><span ng-class="{'deletehover' : hovering, 'skill' : true }">{{ skill }} <span class="delete" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false"><sup>x</sup></span></span> </span>
 
@@ -39,6 +52,8 @@
 			<div ng-repeat="user in topSkills track by $index" class="user">
 
 				<div class="name"><b>{{ user.firstname }} {{ user.lastname }}</b> <button class="addFriend">Add friend</button></div> 
+				<div>Location: {{ user.location }}</div>
+				<div>Total score: {{ user.total }}</div>
 
 				<div>
 				<span>Skills:</span> 
@@ -50,7 +65,8 @@
 				<span ng-repeat="skill in user.matchingSkills track by $index"><span class="skill">{{ skill }}</span> </span>
 				</div>
 			</div>
-<!--
+<!-- List all users -->
+<!-- 
 			<h1>Users</h1>
 			<div ng-repeat="user in skills track by $index" class="user">
 				<span class="name"><b>{{ user.firstname }} {{ user.lastname }}</b></span><span ng-repeat="skill in user.skills track by $index"><span class="skill">{{ skill }}</span> </span>

@@ -26,7 +26,8 @@ var thisIsMe = {
 		"Git",
 		"SASS",
 		"Gulp.js"
-	]
+	],
+	"location" : "Göteborg"
 }
 
 
@@ -51,6 +52,8 @@ function getTopTenMatches (user, skills) {
 		var numberOfMatches = 0;
 		var numberOfSkills = 0;
 		var matchingSkills = [];
+		var locationScore = 0;
+		var totalScore = 0;
 
 		el.skills.forEach(function (element) {
 
@@ -66,16 +69,23 @@ function getTopTenMatches (user, skills) {
 			});
 
 		});
+
+		if (el.location === thisIsMe.location) {
+			// console.log("BAM!");
+			locationScore = locationScore+1;
+		}
+
 		el.matches = numberOfMatches;
 		el.numberOfSkills = numberOfSkills;
 		el.matchingSkills = matchingSkills;
+		el.total = numberOfMatches + locationScore;
 
 	});
 
 	function sortMatches (profile) {
 
 		profile.sort(function(a, b){
-			 return a.matches-b.matches;
+			 return a.total-b.total;
 		});
 		profile.reverse(); 
 
@@ -85,7 +95,7 @@ function getTopTenMatches (user, skills) {
 
 	sortMatches(skills);
 
-	var newSkills = { skills : skills.slice(0,10)};
+	var newSkills = { skills : skills.slice(0,20)};
 
 	return newSkills;
 

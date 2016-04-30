@@ -47,6 +47,12 @@ div#container {
     	min-height: 100px;
     }
     div.user {
+
+/* flex *//*
+    display: flex; 
+    flex-wrap: wrap
+*//* */
+
 	line-height:30px;
 	margin-bottom:4px;
 		span.name {
@@ -57,6 +63,7 @@ div#container {
 }
 
 span.skill {
+/*    line-height:0px; *//* fix flex wrapping v-align mini bug */
 	background-color: #f0f0f0; 
 	margin-right: 1px;
 	padding: 2px 8px;
@@ -120,6 +127,7 @@ button {
     -webkit-border-radius:28px;
     border-radius:28px;
     border: 0px solid white;    
+    outline: none;
     &:hover {
         background-color: #45bc56;
         color: white;

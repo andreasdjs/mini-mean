@@ -11,6 +11,11 @@ var coreSkills = [
 	"Java", "JavaScript", "C#"
 ];
 
+
+var location = [
+	"Göteborg", "Stockholm"
+];
+
 /* Firstname female */
 
 var women = [
@@ -75,6 +80,7 @@ for(i= 0; i < 100; i++){
 	});
 }
 
+
 /********************************************************/
 /** Update with skills
 
@@ -118,6 +124,22 @@ for(i= 0; i < 200; i++){
 		}
 	)
 }
+
+
+// Update all users with location
+
+for(i= 0; i < 200; i++){
+	db.skills.update(
+		{ "user" : "user"+i }, 
+		{ "$set" : 
+			{ "location" : 	location[Math.floor(Math.random() * 2)]			
+			}
+		}
+	)
+}
+
+
+
 
 /********************************************************/
 
