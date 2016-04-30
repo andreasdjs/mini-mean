@@ -61,6 +61,58 @@ router.get('/skillsTopMatches', function(req, res) {
 });
 
 
+// update one animal
+router.put('/updateSkills/:user', function(req, res) {
+
+	console.log("Routing triggered.");
+
+	var user = req.params.user;
+	var thisIsNewMe = req.body;
+	console.log(thisIsNewMe);
+	console.log(user);
+
+// ID
+// 5724c1b84011bb7d4787e3d6
+	var id = "5724c1b84011bb7d4787e3d6";
+
+
+  users.model.findByIdAndUpdate(id, thisIsNewMe, {new: true}, function(err, todo) {
+    if (err) {
+      return res.status(500).json({ err: err.message });
+    }
+    res.json({ 'skills': thisIsNewMe, message: 'User profile updated' });
+  });
+
+
+
+/*
+	
+  var id = req.params.id;
+  var animal = req.body;
+ */
+
+ /*
+  if (animal && animal._id !== id) {
+    return res.status(500).json({ err: "Ids don't match!" });
+  }
+*/
+
+/*
+  Animal.findByIdAndUpdate(id, animal, {new: true}, function(err, todo) {
+    if (err) {
+      return res.status(500).json({ err: err.message });
+    }
+    res.json({ 'animal': animal, message: 'Animal updated' });
+  });
+*/
+
+});
+
+
+
+
+
+
 /* Dump users & skills in console.log */
 
 /*

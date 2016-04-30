@@ -33,18 +33,19 @@
 			</div>-->
 
 			<div class="user">
+				<div>Location: {{ me.location }}</div>
 <!--				<span class="name"><b>{{ me.firstname }} {{ me.lastname }}</b></span>-->
 <!--
 				<div class="name"><b>{{ me.firstname }} {{ me.lastname }}</b></div>
 				Skills:-->
 
-				<span ng-repeat="skill in me.skills track by $index"><span ng-class="{'deletehover' : hovering, 'skill' : true }">{{ skill }} <span class="delete" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false"><sup>x</sup></span></span> </span>
+				<span ng-repeat="skill in me.skills track by $index"><span ng-class="{'deletehover' : hovering, 'skill' : true }">{{ skill }} <span class="delete" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false" ng-click="removeSkill($index)"><sup>x</sup></span></span> </span>
 
 			</div>
 
 			<div>
 				<input></input>
-				<button>Add skill</button>
+				<button ng-click="addSkill('New skill')">Add skill</button>
 			</div>
 
 			<h1>Matches</h1>

@@ -22,6 +22,35 @@ app.service('dataService', function($http) {
     $http.get('/api/getSkillDetails').then(cb);
   };
 
+ /* Save user */
+
+   this.updateSkills = function(me) {
+
+    console.log("Trigger save service");
+    console.log(me);
+    console.log(me.user);
+    console.log("------");
+
+
+      $http.put('/api/updateSkills/' + me.user, me).then(function(result) {
+          console.log("Bang!");
+//        return result.data.animal;
+      });
+
+
+/*
+    if(!animal._id) {
+      $http.post('/api/user', animal);
+    } else {
+      $http.put('/api/user/' + animal._id, animal).then(function(result) {
+        return result.data.animal;
+      });
+    }
+
+    */
+  };
+
+
   /* Delete skill by user */
 
 

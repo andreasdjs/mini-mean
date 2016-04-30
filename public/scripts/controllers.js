@@ -15,6 +15,35 @@ app.controller('myController', function($scope, dataService) {
 	    $scope.topSkills =  response.data.skills;
 	  });
 
+	$scope.removeSkill = function (index) {
+//		console.log("Remove skill triggered.");
+//		console.log(index);
+//		console.log($scope.me.skills[index]);
+		$scope.me.skills.splice(index, 1);
+		$scope.saveSkills();
+	}
+
+	$scope.addSkill = function (newSkill) {
+		console.log("Add skill triggered.");
+		console.log(newSkill);
+		$scope.me.skills.push(newSkill);
+		$scope.saveSkills();
+	}
+
+	$scope.saveSkills = function() {
+		console.log("Save skills triggered.");
+		console.log($scope.me);
+
+	    dataService.updateSkills($scope.me);
+
+/*
+	  dataService.updateSkills(function(response) {
+	  	console.log("saveSkills service triggered.");
+	//    $scope.topSkills =  response.data.skills;
+	  });
+*/
+	}
+
 
 	$scope.hello = function () {
 		console.log("tittut");
@@ -37,9 +66,11 @@ app.controller('myController', function($scope, dataService) {
 			"Git",
 			"SASS",
 			"Gulp.js"
-		]
+		],
+		"location" : "Göteborg"
 	}
 
+/*
 	$scope.mySkills = [
 		{
 			"skills" : [ 
@@ -51,6 +82,7 @@ app.controller('myController', function($scope, dataService) {
 			]
 		}
 	];
+*/	
 
 /*
 	 $scope.save = function (car, index) {

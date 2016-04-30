@@ -53,7 +53,9 @@ function getTopTenMatches (user, skills) {
   		return obj.user === user;
 	});
 
-	var thisIsMe = getCurrentUser[0];
+	var thisIsMe = getCurrentUser[0]; 
+
+	// insert filter to eliminate current user from array
 
 	skills.forEach(function (el) {
 
@@ -89,7 +91,7 @@ function getTopTenMatches (user, skills) {
 		el.total = numberOfMatches + locationScore;
 
 		if (el.user === thisIsMe.user) {
-			el.total = -1;
+			el.total = -1; // quick fix, filter this user out for real later.
 		}
 
 	});
