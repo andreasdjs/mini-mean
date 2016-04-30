@@ -52,7 +52,7 @@ router.get('/skillsTopMatches', function(req, res) {
 	      return res.status(500).json({ message: err.message });
 		}
 
-		var currentUser = "user201";
+		var currentUser = "user200";
 
 	    res.json(modules.getTopTenMatches(currentUser, skills));
 

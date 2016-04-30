@@ -8,9 +8,9 @@
 ** Current profile mock object
 */
 
-
+/*
 var thisIsMe = {
-	"user" : "user201",
+	"user" : "user200",
 	"firstname" : "John",
 	"lastname" : "Doe",
 	"skills" : [
@@ -29,7 +29,7 @@ var thisIsMe = {
 	],
 	"location" : "Göteborg"
 }
-
+*/
 
 function findMatches (obj) {
 	return obj;
@@ -45,6 +45,15 @@ function firstNresult (n, obj) {
 
 
 function getTopTenMatches (user, skills) {
+
+	console.log("Current user: " + user);
+
+	/* Get current user */
+	var getCurrentUser = skills.filter(function(obj) {
+  		return obj.user === user;
+	});
+
+	var thisIsMe = getCurrentUser[0];
 
 	skills.forEach(function (el) {
 
@@ -71,7 +80,6 @@ function getTopTenMatches (user, skills) {
 		});
 
 		if (el.location === thisIsMe.location) {
-			// console.log("BAM!");
 			locationScore = locationScore+1;
 		}
 
@@ -79,6 +87,10 @@ function getTopTenMatches (user, skills) {
 		el.numberOfSkills = numberOfSkills;
 		el.matchingSkills = matchingSkills;
 		el.total = numberOfMatches + locationScore;
+
+		if (el.user === thisIsMe.user) {
+			el.total = -1;
+		}
 
 	});
 

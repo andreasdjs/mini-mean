@@ -21,7 +21,7 @@ app.controller('myController', function($scope, dataService) {
 	}
 
 	$scope.me = {
-		"user" : "user201",
+		"user" : "user200",
 		"firstname" : "John",
 		"lastname" : "Doe",
 		"skills" : [

@@ -80,22 +80,33 @@ for(i= 0; i < 100; i++){
 	});
 }
 
+/*******/
+/** Insert thisIsMe
 
-/********************************************************/
-/** Update with skills
+db.skills.insert(
+	{
+		"user" : "user200",
+		"firstname" : "John",
+		"lastname" : "Doe",		
+		"skills" : [
+			"JavaScript",
+			"Node.js",
+			"AngularJS",
+			"MongoDB",
+			"User Experience",
+			"Web Design",
+			"User Interface Design",
+			"Photoshop",
+			"Mean Stack",
+			"Git",
+			"SASS",
+			"Gulp.js"
+		],
+		"location" : "Göteborg"
+});
 
-// single user 
 
-db.skills.update(
-	{ "user" : "user3" }, 
-	{ "$addToSet" : 	
-		{ "skills" : 
-			{ "$each" : ["JavaScript"] }
-		}
-	}
-)
-
-// Update all users
+// Update all users with skills
 
 for(i= 0; i < 200; i++){
 	db.skills.update(
@@ -131,15 +142,10 @@ for(i= 0; i < 200; i++){
 for(i= 0; i < 200; i++){
 	db.skills.update(
 		{ "user" : "user"+i }, 
-		{ "$set" : 
-			{ "location" : 	location[Math.floor(Math.random() * 2)]			
-			}
+		{ "$set" : { "location" : location[Math.floor(Math.random() * 2)] }
 		}
 	)
 }
-
-
-
 
 /********************************************************/
 
@@ -183,6 +189,10 @@ for(i= 0; i < 100; i++){
 		"skill" : Math.floor(Math.random() * 52)
 	});
 }
+
+
+
+
 
 /********************************************************/
 /** View
