@@ -1,145 +1,95 @@
 'use strict';
 
 var express = require('express');
-var users  = require('../models/users');
+//var users  = require('../models/users');
+var users  = require('../models/models');
 var router = express.Router();
 var modules = require('../modules/modules');
 
 
-/* Get skill object for current user */
-/*
-router.get('/currentSkills', function(req, res) {
-	console.log("Requesting skills.");
+/*****************************************************/
+/** Get available skills
+/*****************************************************/
 
-  users.model.find({}, function(err, skills) {
-    if (err) {
-      return res.status(500).json({ message: err.message });
-    }
-
-    res.json({ skills: skills });
-
-  }); 
-
+router.get('/availableSkills', function(req, res) {
+	console.log("Requesting available skills.");
+	users.availabSkillsModel.find({}, function(err, data) {
+		if (err) {
+			return res.status(500).json({ message: err.message });
+		}
+		res.json({ availableSkills: data });
+	}); 
 });
-*/
 
-/* Get all users and their skills */
+
+/*****************************************************/
+/** Get current user
+/*****************************************************/
 
 router.get('/currentUser', function(req, res) {
 	console.log("Requesting current user.");
-
 	var currentUser = "user200"; // placeholder for user logged in
-
-  users.model.find({ user : currentUser }, function(err, skills) {
-    if (err) {
-      return res.status(500).json({ message: err.message });
-    }
-
-//    console.log("Current User:")
-//    console.log(skills);
-    var newMe = skills[0];
- //   console.log(newMe);
-    res.json(newMe);
-//    res.json({ skills: skills });
-
-  }); 
-
+	users.model.find({ user : currentUser }, function(err, skills) {
+	    if (err) {
+	      return res.status(500).json({ message: err.message });
+	    }
+	    var newMe = skills[0];
+   		res.json(newMe);
+	}); 
 });
 
-
-
-
-/* Get all users and their skills */
+/*****************************************************/
+/** Get all users and their skills 
+/*****************************************************/
 
 router.get('/skills', function(req, res) {
 	console.log("Requesting skills.");
-
-  users.model.find({}, function(err, skills) {
-    if (err) {
-      return res.status(500).json({ message: err.message });
-    }
-
-    res.json({ skills: skills });
-
-  }); 
-
+	users.model.find({}, function(err, skills) {
+		if (err) {
+	    	return res.status(500).json({ message: err.message });
+		}
+	    res.json({ skills: skills });
+	}); 
 });
 
-
-/* Get all top ten matching users based on skills */
+/*****************************************************/
+/** Get a selection of matching users
+/*****************************************************/
 
 router.get('/skillsTopMatches', function(req, res) {
-	console.log("Requesting top 10 matches.");
+	console.log("Requesting top matches.");
 
 	// To be able to modify the object lean().exec() is used  //
-
 	users.model.find().lean().exec({}, function(err, skills) {
-	    if (err) {
-	      return res.status(500).json({ message: err.message });
+		if (err) {
+	    	return res.status(500).json({ message: err.message });
 		}
-
 		var currentUser = "user200"; // placeholder for user logged in
-
 	    res.json(modules.getTopTenMatches(currentUser, skills));
-
 	}); 
-
 });
 
 
-// update one animal
+/*****************************************************/
+/** Update skills of current user
+/*****************************************************/
+
 router.put('/updateSkills/:user', function(req, res) {
 
 	console.log("Routing triggered.");
 
 	var user = req.params.user;
 	var thisIsNewMe = req.body;
-//	console.log(thisIsNewMe._id);
-//	console.log(thisIsNewMe);
-
-/*
-	console.log(thisIsNewMe);
-	console.log(user);
-*/
-// ID
-// 5724c1b84011bb7d4787e3d6
-//	var id = "5724c1b84011bb7d4787e3d6";
-
 	var id = thisIsNewMe._id;
 
-  users.model.findByIdAndUpdate(id, thisIsNewMe, {new: true}, function(err, todo) {
-    if (err) {
-      return res.status(500).json({ err: err.message });
-    }
-    res.json({ 'skills': thisIsNewMe, message: 'User profile updated' });
-  });
-
-
-
-/*
-	
-  var id = req.params.id;
-  var animal = req.body;
- */
-
- /*
-  if (animal && animal._id !== id) {
-    return res.status(500).json({ err: "Ids don't match!" });
-  }
-*/
-
-/*
-  Animal.findByIdAndUpdate(id, animal, {new: true}, function(err, todo) {
-    if (err) {
-      return res.status(500).json({ err: err.message });
-    }
-    res.json({ 'animal': animal, message: 'Animal updated' });
-  });
-*/
+	users.model.findByIdAndUpdate(id, thisIsNewMe, {new: true}, function(err, todo) {
+		if (err) {
+			return res.status(500).json({ err: err.message });
+		}
+		res.json({ 'skills': thisIsNewMe, message: 'User profile updated' });
+	});
 
 });
-
-
 
 
 

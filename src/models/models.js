@@ -27,9 +27,8 @@ var availableSkillsSchema = new mongoose.Schema({
 	status: String */
 }, { versionKey: false }); 
 
-//}, { versionKey: false }, { collection: '<name of collection>' }); 
-
 var availabSkillsModel = mongoose.model('Availableskill', availableSkillsSchema);
+
 
 /*****************************************************/
 /** Exports 

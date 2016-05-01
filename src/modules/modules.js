@@ -4,33 +4,6 @@
 /** Functions
 /*************************************/
 
-/* 
-** Current profile mock object
-*/
-
-/*
-var thisIsMe = {
-	"user" : "user200",
-	"firstname" : "John",
-	"lastname" : "Doe",
-	"skills" : [
-		"JavaScript",
-		"Node.js",
-		"AngularJS",
-		"MongoDB",
-		"User Experience",
-		"Web Design",
-		"User Interface Design",
-		"Photoshop",
-		"Mean Stack",
-		"Git",
-		"SASS",
-		"Gulp.js"
-	],
-	"location" : "Göteborg"
-}
-*/
-
 /* Placeholders for separated functions. */
 
 function findMatches (obj) {

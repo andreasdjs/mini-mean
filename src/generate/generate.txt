@@ -249,3 +249,46 @@ db.skills.aggregate(
 	},
 	{ $sort : {Lastname : 1}}
 ) 
+
+
+
+
+/********************************************************/
+/** Total listing of skills with descriptions.
+/********************************************************/
+
+
+var skills = [
+	"Java", "JavaScript", "C#", "MVC", "Visual Studio", "ASP.NET", "Design Patterns", "Bootstrap", "NoSQL", "SEO", "Load Balancing", "Node.js", "AngularJS", "ReactJS", "MongoDB", "Mean Stack", "jQuery", "User Experience", "Web Design", "User Interface Design", "Photoshop", "Graphic Design", "HTML5", "CSS3", "Illustrator", "JSON", "Regular Expressions", "AJAX", "Git", "Gulp.js", "Web Typography", "SASS", "LESS", "Stylus", "Middleware", "Unit Testing", "Test Driven Development", "Copywriting", "Typography", "Agile Methodologies", "Kanban", "Scrum", "Drupal", "WordPress", "SQL", "Data Aggregation", "Eclipse", "Unix", "Linux", "Solaris", "JUnit", "Hudson"
+];
+
+
+for(i= 0; i < skills.length; i++){
+	db.availableskills.insert(
+	{
+		"name" : skills[i],
+		"description" : "",
+		"status" : "Approved"
+	});
+}
+
+
+/* Descriptions from Wikipedia: 
+
+"JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification." 
+
+"Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible."
+
+db.availableskills.update(
+	{ "name" : "JavaScript" }, 
+	{ "$set" : { "description" : "JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification." }
+	}
+)
+
+db.availableskills.update(
+	{ "name" : "Java" }, 
+	{ "$set" : { "description" : "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible." }
+	}
+)
+
+

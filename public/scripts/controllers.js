@@ -1,16 +1,25 @@
 'use strict';
 
-
-//app.controller('myController', function($scope, $http, $compile) {
-
 app.controller('myController', function($scope, dataService) {
 
 	$scope.hovering = false; // detecting hover for delete class
 
 	dataService.getCurrentUser(function(response) {
 		$scope.me =  response.data;
-//		console.log("trigger get currentUser");
-//		console.log($scope.me);
+	});
+
+	dataService.getSkillDetails(function(response) {
+		$scope.availableSkills = response.data;
+
+		var skillDetails = response.data.availableSkills.filter(function(obj) {
+	  		return obj.name === "JavaScript";
+		});
+
+		var skillDetails = skillDetails[0];
+		console.log(skillDetails.description);
+		
+//		console.log($scope.availableSkills);
+
 	});
 
 	dataService.getSkills(function(response) {
@@ -22,25 +31,21 @@ app.controller('myController', function($scope, dataService) {
 	});
 
 	$scope.removeSkill = function (index) {
-//		console.log("Remove skill triggered.");
-//		console.log(index);
 //		console.log($scope.me.skills[index]);
 		$scope.me.skills.splice(index, 1);
 		$scope.saveSkills();
 	}
 
 	$scope.addSkill = function (newSkill) {
-//		console.log("Add skill triggered.");
 		if (newSkill) {
 			$scope.me.skills.push(newSkill);
 			$scope.saveSkills();
 			$scope.input.newSkill = ""; // clear input field
+			// call skill database function 
 		}
 	}
 
 	$scope.saveSkills = function() {
-//		console.log("Save skills triggered.");
-//		console.log($scope.me);
 	    dataService.updateSkills($scope.me);
 	}
 
@@ -48,28 +53,23 @@ app.controller('myController', function($scope, dataService) {
 		console.log("Oh, a new friend!");
 	}
 
-/*
-	$scope.me = {
-		"user" : "user200",
-		"firstname" : "John",
-		"lastname" : "Doe",
-		"skills" : [
-			"JavaScript",
-			"Node.js",
-			"AngularJS",
-			"MongoDB",
-			"User Experience",
-			"Web Design",
-			"User Interface Design",
-			"Photoshop",
-			"Mean Stack",
-			"Git",
-			"SASS",
-			"Gulp.js"
-		],
-		"location" : "Göteborg"
+	$scope.hello = function() {
+		console.log("Hello dear!");
 	}
-*/
+
+	$scope.showDetails = function(index) {
+
+		var skillDetails = $scope.availableSkills.availableSkills.filter(function(obj) {
+	  		return obj.name === $scope.me.skills[index];
+		});
+
+		if (skillDetails[0].description !== "") {	
+			var skillDetails = skillDetails[0];
+			console.log(skillDetails.description);
+		}
+
+	}
+
 
 });
 

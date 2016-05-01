@@ -114,12 +114,13 @@ input {
     margin-bottom: 4px;
     outline: none;
     border: 1px solid #999;
-
+    background: #f0f0f0;
 }
 
 input:focus {
     border-bottom: solid #45bc56 5px;
     margin-bottom: 0px;
+    background: #f6f6f6; /* Light up when focused */
 }
 
 button {
@@ -142,8 +143,5 @@ button.addFriend {
   padding: 0px 12px;
   margin-left: 6px;
 }
-
-
-
 
 

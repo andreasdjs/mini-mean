@@ -25,7 +25,7 @@ app.service('dataService', function($http) {
   /* More information about each skill */
 
   this.getSkillDetails = function(cb) {
-    $http.get('/api/getSkillDetails').then(cb);
+    $http.get('/api/availableSkills').then(cb);
   };
 
  /* Save user */
