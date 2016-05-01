@@ -31,15 +31,21 @@ app.controller('myController', function($scope, dataService) {
 
 	$scope.addSkill = function (newSkill) {
 //		console.log("Add skill triggered.");
-//		console.log(newSkill);
-		$scope.me.skills.push(newSkill);
-		$scope.saveSkills();
+		if (newSkill) {
+			$scope.me.skills.push(newSkill);
+			$scope.saveSkills();
+			$scope.input.newSkill = ""; // clear input field
+		}
 	}
 
 	$scope.saveSkills = function() {
 //		console.log("Save skills triggered.");
 //		console.log($scope.me);
 	    dataService.updateSkills($scope.me);
+	}
+
+	$scope.addFriend = function() {
+		console.log("Oh, a new friend!");
 	}
 
 /*

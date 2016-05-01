@@ -57,6 +57,9 @@ function getTopTenMatches (user, skills) {
 
 	var thisIsMe = getCurrentUser[0]; 
 
+	console.log("Skills length: ");
+	console.log(thisIsMe.skills.length);
+
 	// insert filter to eliminate current user from array
 
 	skills.forEach(function (el) {
@@ -84,7 +87,14 @@ function getTopTenMatches (user, skills) {
 		});
 
 		if (el.location === thisIsMe.location) {
+
 			locationScore = locationScore+1;
+
+			if (thisIsMe.skills.length > 10) {
+				// If user has many skills, location score grows.
+				locationScore = locationScore+1;
+			}
+
 		}
 
 		el.matches = numberOfMatches;
