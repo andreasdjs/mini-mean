@@ -36,7 +36,7 @@
 
 			<div ng-repeat="user in topSkills track by $index" class="user">
 
-				<div class="name"><b>{{ user.firstname }} {{ user.lastname }}</b> <button class="addFriend" ng-click="addFriend()">Add friend</button></div> 
+				<div class="name"><b>{{ user.firstname }} {{ user.lastname }}</b> <button class="addFriend" ng-click="addFriend($index)">Add friend</button></div> 
 				<div>Location: {{ user.location }}</div>
 				<div>
 				<span>Skills:</span> 

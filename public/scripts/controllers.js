@@ -17,8 +17,6 @@ app.controller('myController', function($scope, dataService) {
 
 		var skillDetails = skillDetails[0];
 		console.log(skillDetails.description);
-		
-//		console.log($scope.availableSkills);
 
 	});
 
@@ -55,8 +53,11 @@ app.controller('myController', function($scope, dataService) {
 
 	}
 
-	$scope.addFriend = function() {
+	$scope.addFriend = function(index) {
 		console.log("Oh, a new friend!");
+		console.log($scope.topSkills[index].user)
+		console.log($scope.topSkills[index].firstname)
+		console.log($scope.topSkills[index].lastname)
 	}
 
 	$scope.hello = function() {
