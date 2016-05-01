@@ -78,6 +78,44 @@ app.controller('myController', function($scope, dataService) {
 	}
 
 
+/******************************************************/
+/* The C in CRUD. 
+/* Not i use but required for the project..
+/******************************************************/
+
+	function triggerNewSkill () {
+		var add_skill = {
+			"name" : "New skill",
+			"description" : "",
+			"status" : "New"
+		}
+	    dataService.addNewSkill(add_skill);
+	}
+
+//	triggerNewSkill(); 
+
+
+/******************************************************/
+/* The D in CRUD. 
+/* Not i use but required for the project..
+/******************************************************/
+
+
+	function triggerDeleteSkill () {
+
+		var remove_skill = {
+			"_id" : "57265a6cc13a633cc7a0e2a5",
+			"name" : "New skill",
+			"description" : "",
+			"status" : "New"
+		}
+
+	    dataService.removeSkill(remove_skill);
+	}
+
+// 	triggerDeleteSkill();
+
+
 });
 
 

@@ -30,9 +30,6 @@ function getTopTenMatches (user, skills) {
 
 	var thisIsMe = getCurrentUser[0]; 
 
-	console.log("Skills length: ");
-	console.log(thisIsMe.skills.length);
-
 	// insert filter to eliminate current user from array
 
 	skills.forEach(function (el) {

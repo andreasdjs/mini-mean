@@ -99,27 +99,43 @@ router.put('/updateSkills/:user', function(req, res) {
 router.post('/addNewSkill', function(req, res) {
 	console.log("Requesting add new skill.");
 	var new_skill = req.body;
-	console.log(req.body);
 
-	var add_skill = {
-		"name" : "New skill",
-		"description" : "",
-		"status" : "New"
-	}
+	console.log("Skill passed from function: ");
 
-	console.log(add_skill);
-/*
-	users.availabSkillsModel.create(add_skill, function(err, todo) {
+	console.log(new_skill);
+
+	users.availabSkillsModel.create(new_skill, function(err, todo) {
 		if (err) {
 			return res.status(500).json({ err: err.message });
 		}
 	
-	res.json({ 'avilableskills': add_skill, message: 'New skill added for approval' });
+		res.json({ 'avilableskills': new_skill, message: 'New skill added for approval' });
 
 	});
-*/
+
 
 });
+
+/*****************************************************/
+/** Delete skill by id from available skills 
+/*****************************************************/
+
+router.delete('/removeSkill/:id', function(req, res) {
+  var id = req.params.id;
+//  console.log(id);
+
+  users.availabSkillsModel.findByIdAndRemove(id, function(err, result) {
+    if (err) {
+      return res.status(500).json({ err: err.message });
+    }
+    res.json({ message: 'Skill deleted' });
+  });
+
+
+});
+
+
+
 
 
 
@@ -211,29 +227,5 @@ model.animal.findOneAndUpdate({ name: "Marten" }, { $set : { weight: 200 }}, fun
 });
 */
 
-/* READ ... again */
-/*
-model.animal.find(function(err, animals){
-	if(err) {
-		return console.error('Error: ' + err);
-	} else {
-		console.log("-------------------------");
-		animals.forEach(function(animal){
-			console.log(animal.name);
-		});
-	}
-});
-*/
-
-
-/*
-router.get...
-
-router.post...
-
-router.put...
-
-router.delete...
-*/
 
 module.exports = router;

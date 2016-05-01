@@ -2,9 +2,34 @@
 
 app.service('dataService', function($http) {
 
+  /* Add skill to available skills */
+
+  this.addNewSkill = function(skill) {
+    $http.post('/api/addNewSkill', skill);
+  }; 
+
+  /* Delete skill from available skills */ 
+
+  this.removeSkill = function(skill) {
+
+//    console.log(skill._id);
+//    var id = "572653c1affb1c00c55380e0";
+
+//    $http.delete('/api/removeSkill/' + id);
+
+
+    if (!skill._id) {
+      console.log("Error, no id");
+    }
+    return $http.delete('/api/removeSkill/' + skill._id).then(function() {
+      console.log("Skill removed: " + skill.name);
+    }); 
+  };
+
+
   /* Get current user */
 
-   this.getCurrentUser = function(cb) {
+  this.getCurrentUser = function(cb) {
     $http.get('/api/currentUser').then(cb);
   }; 
 

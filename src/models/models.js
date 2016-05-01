@@ -22,9 +22,9 @@ var model = mongoose.model('Skill', userSchema);
 /*****************************************************/
 
 var availableSkillsSchema = new mongoose.Schema({
-	name: String
-/*	description: String,
-	status: String */
+	name: String,
+	description: String,
+	status: String
 }, { versionKey: false }); 
 
 var availabSkillsModel = mongoose.model('Availableskill', availableSkillsSchema);
