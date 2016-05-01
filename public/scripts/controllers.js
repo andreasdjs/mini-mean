@@ -67,7 +67,7 @@ app.controller('myController', function($scope, dataService) {
 	$scope.showDetails = function(index) {
 
 		var skillDetails = $scope.availableSkills.availableSkills.filter(function(obj) {
-	  		return obj.name === $scope.me.skills[index];
+	  		return obj.name === $scope.me.skills[index]; 
 		});
 
 		if (skillDetails[0].description !== "") {	

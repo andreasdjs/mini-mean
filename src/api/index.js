@@ -91,6 +91,37 @@ router.put('/updateSkills/:user', function(req, res) {
 
 });
 
+/*****************************************************/
+/** Create new skill in available skills 
+/*****************************************************/
+
+
+router.post('/addNewSkill', function(req, res) {
+	console.log("Requesting add new skill.");
+	var new_skill = req.body;
+	console.log(req.body);
+
+	var add_skill = {
+		"name" : "New skill",
+		"description" : "",
+		"status" : "New"
+	}
+
+	console.log(add_skill);
+/*
+	users.availabSkillsModel.create(add_skill, function(err, todo) {
+		if (err) {
+			return res.status(500).json({ err: err.message });
+		}
+	
+	res.json({ 'avilableskills': add_skill, message: 'New skill added for approval' });
+
+	});
+*/
+
+});
+
+
 
 
 
