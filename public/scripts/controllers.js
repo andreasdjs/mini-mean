@@ -47,6 +47,12 @@ app.controller('myController', function($scope, dataService) {
 
 	$scope.saveSkills = function() {
 	    dataService.updateSkills($scope.me);
+
+		// Reload matches
+		dataService.getSkillsTopMatches(function(response) {
+			$scope.topSkills =  response.data.skills;
+		});
+
 	}
 
 	$scope.addFriend = function() {
