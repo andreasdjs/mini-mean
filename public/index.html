@@ -31,7 +31,11 @@
 				<input type="text" ng-model="input.newSkill"></input>
 				<button ng-click="addSkill(input.newSkill)">Add skill</button>
 			</div>
-
+			<!--
+			<div class="hideUntilMatch">
+				<div class="availableSkill"><span> {{ availabeskill }} </span><span> {{ description }} </span></div>
+			</div>
+			-->
 			<h1>Matches</h1>
 
 			<div ng-repeat="user in topSkills track by $index" class="user">

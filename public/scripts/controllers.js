@@ -104,7 +104,7 @@ app.controller('myController', function($scope, dataService) {
 	function triggerDeleteSkill () {
 
 		var remove_skill = {
-			"_id" : "57265a6cc13a633cc7a0e2a5",
+			"_id" : "572709dce8a77300d46499c3",
 			"name" : "New skill",
 			"description" : "",
 			"status" : "New"
@@ -113,7 +113,7 @@ app.controller('myController', function($scope, dataService) {
 	    dataService.removeSkill(remove_skill);
 	}
 
-// 	triggerDeleteSkill();
+ 	triggerDeleteSkill();
 
 
 });

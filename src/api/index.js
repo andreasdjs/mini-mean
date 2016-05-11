@@ -21,6 +21,21 @@ router.get('/availableSkills', function(req, res) {
 	}); 
 });
 
+/*****************************************************/
+/** Find skill with regex
+/*****************************************************/
+
+// http://snipref.com/mongoose-js/mongoose-js-find-with-regex/
+
+/*
+
+var name = 'Peter';
+model.findOne({name: new RegExp('^'+name+'$', "i")}, function(err, doc) {
+  //Do your action here..
+});
+
+*/
+
 
 /*****************************************************/
 /** Get current user

@@ -42,27 +42,6 @@ for(i= 0; i < 100; i++){
 	db.skills.insert(
 	{
 		"user" : "user"+i,
-		"name" : women[i],
-		"skills" : [skills[Math.floor(Math.random() * 52)]]
-	});
-}
-
-for(i= 0; i < 100; i++){
-	var j = 100 + i;
-	db.skills.insert(
-	{
-		"user" : "user"+j,
-		"name" : men[i],		
-		"skills" : [skills[Math.floor(Math.random() * 52)]]
-	});
-}
-
-// first + lastname
-
-for(i= 0; i < 100; i++){
-	db.skills.insert(
-	{
-		"user" : "user"+i,
 		"firstname" : women[i],
 		"lastname" : lastname[i],		
 		"skills" : [skills[Math.floor(Math.random() * 52)]]
