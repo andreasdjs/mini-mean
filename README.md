@@ -1,4 +1,4 @@
-# MINI MEAN PROJECT : E D U N O W
+# MINI MEAN PROJECT: EDUNOW
 
 ## Backround
 
