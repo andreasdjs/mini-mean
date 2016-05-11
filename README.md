@@ -12,7 +12,9 @@ The project aims to fulfill a specific part of an online students web portal and
 
 The goal was to make it easier for students to find other students with similar skills, preferably in a nearby location.
 
-#### Installation
+## Installation
+
+#### Install project
 
 ```shell
 $ npm install
@@ -23,4 +25,19 @@ $ npm install
 Use the code snippets included in /generate/generate.txt
 
 and populate two databasese: skills & availableskills
+
+## Start
+
+#### Start SASS generation and activate live reload
+
+```shell
+$ gulp
+```
+
+#### Start server
+
+```shell
+$ npm start
+```
+
 
